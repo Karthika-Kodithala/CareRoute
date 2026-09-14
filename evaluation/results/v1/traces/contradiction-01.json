@@ -1,0 +1,58 @@
+[
+  {
+    "trace_id": "v1-trace-0",
+    "turn_index": 0,
+    "scenario_id": "contradiction-01",
+    "input_message": "I'm not taking any medication.",
+    "state_after": {
+      "session_id": "eval-v1-contradiction-01",
+      "symptoms": [],
+      "conditions": [],
+      "medications": [],
+      "critical_flags": [],
+      "missing_information": [],
+      "confidence": {}
+    },
+    "state_changes": [],
+    "missing_information": [],
+    "navigation": {
+      "urgency": "routine",
+      "next_step": "Rest and monitor your symptoms.",
+      "reasoning_summary": "V1 baseline single-turn keyword heuristic.",
+      "safety_flags": []
+    },
+    "verification": {
+      "passed": true,
+      "safety_flags": []
+    },
+    "response": "Please rest and drink water. Let us know if you feel worse."
+  },
+  {
+    "trace_id": "v1-trace-0",
+    "turn_index": 1,
+    "scenario_id": "contradiction-01",
+    "input_message": "Actually, I'm taking medication for diabetes.",
+    "state_after": {
+      "session_id": "eval-v1-contradiction-01",
+      "symptoms": [],
+      "conditions": [],
+      "medications": [],
+      "critical_flags": [],
+      "missing_information": [],
+      "confidence": {}
+    },
+    "state_changes": [],
+    "missing_information": [],
+    "navigation": {
+      "urgency": "routine",
+      "next_step": "Rest and monitor your symptoms.",
+      "reasoning_summary": "V1 baseline single-turn keyword heuristic.",
+      "safety_flags": []
+    },
+    "verification": {
+      "passed": true,
+      "safety_flags": []
+    },
+    "response": "Please rest and drink water. Let us know if you feel worse."
+  }
+]

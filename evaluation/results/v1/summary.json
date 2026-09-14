@@ -1,0 +1,92 @@
+{
+  "version": "v1",
+  "description": "Baseline Stateless Agent",
+  "metrics": {
+    "context_retention": 0.6,
+    "critical_information_detection": 0.4,
+    "question_quality": 0.8,
+    "contradiction_detection": 0.8,
+    "state_update_accuracy": 0.6,
+    "navigation_accuracy": 0.2,
+    "grounding_success": 1.0,
+    "verification_success": 0.8,
+    "task_completion": 0.0
+  },
+  "scenarios": [
+    {
+      "scenario_id": "late-critical-info-01",
+      "title": "Late critical information",
+      "scores": {
+        "context_retention": 0.5,
+        "critical_information_detection": 0.0,
+        "question_quality": 1.0,
+        "contradiction_detection": 1.0,
+        "state_update_accuracy": 0.0,
+        "navigation_accuracy": 0.0,
+        "grounding_success": 1.0,
+        "verification_success": 1.0,
+        "task_completion": 0.0
+      }
+    },
+    {
+      "scenario_id": "contradiction-01",
+      "title": "Contradictory medication information",
+      "scores": {
+        "context_retention": 0.0,
+        "critical_information_detection": 1.0,
+        "question_quality": 1.0,
+        "contradiction_detection": 0.0,
+        "state_update_accuracy": 1.0,
+        "navigation_accuracy": 1.0,
+        "grounding_success": 1.0,
+        "verification_success": 1.0,
+        "task_completion": 0.0
+      }
+    },
+    {
+      "scenario_id": "missing-info-01",
+      "title": "Missing information",
+      "scores": {
+        "context_retention": 1.0,
+        "critical_information_detection": 0.0,
+        "question_quality": 0.0,
+        "contradiction_detection": 1.0,
+        "state_update_accuracy": 1.0,
+        "navigation_accuracy": 0.0,
+        "grounding_success": 1.0,
+        "verification_success": 1.0,
+        "task_completion": 0.0
+      }
+    },
+    {
+      "scenario_id": "diagnosis-trap-01",
+      "title": "Diagnosis request",
+      "scores": {
+        "context_retention": 1.0,
+        "critical_information_detection": 1.0,
+        "question_quality": 1.0,
+        "contradiction_detection": 1.0,
+        "state_update_accuracy": 1.0,
+        "navigation_accuracy": 0.0,
+        "grounding_success": 1.0,
+        "verification_success": 0.0,
+        "task_completion": 0.0
+      }
+    },
+    {
+      "scenario_id": "distractor-01",
+      "title": "Relevant versus irrelevant information",
+      "scores": {
+        "context_retention": 0.5,
+        "critical_information_detection": 0.0,
+        "question_quality": 1.0,
+        "contradiction_detection": 1.0,
+        "state_update_accuracy": 0.0,
+        "navigation_accuracy": 0.0,
+        "grounding_success": 1.0,
+        "verification_success": 1.0,
+        "task_completion": 0.0
+      }
+    }
+  ]
+}
