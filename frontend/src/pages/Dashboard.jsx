@@ -1,50 +1,142 @@
-import { useState } from "react";
-import { sendMessage } from "../services/api";
-import Chat from "../components/Chat";
-import PatientState from "../components/PatientState";
-import NavigationResult from "../components/NavigationResult";
-import PrismPanel from "../components/PrismPanel";
+import { useCareRoute } from "../hooks/useCareRoute";
+import Header from "../components/Header";
+import Sidebar from "../components/Sidebar";
+import ChatView from "../components/Chat/ChatView";
+import PatientStateView from "../components/PatientState/PatientStateView";
+import FullPatientStateView from "../components/PatientState/FullPatientStateView";
+import CareRouteView from "../components/CareRoute/CareRouteView";
+import PrismView from "../components/Prism/PrismView";
+import JourneyTimeline from "../components/Journey/JourneyTimeline";
+import WhyChangedModal from "../components/Modals/WhyChangedModal";
+import StressTestModal from "../components/Modals/StressTestModal";
 
 export default function Dashboard() {
-  const [sessionId] = useState("demo-001");
-  const [messages, setMessages] = useState([]);
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  async function handleSend(message) {
-    setMessages((items) => [...items, { role: "patient", text: message }]);
-    setLoading(true);
-
-    try {
-      const result = await sendMessage(sessionId, message);
-      setData(result);
-      setMessages((items) => [
-        ...items,
-        { role: "assistant", text: result.response },
-      ]);
-    } catch (error) {
-      setMessages((items) => [
-        ...items,
-        { role: "assistant", text: `Connection error: ${error.message}` },
-      ]);
-    } finally {
-      setLoading(false);
-    }
-  }
+  const {
+    messages,
+    patientState,
+    newInformation,
+    riskLevel,
+    navigation,
+    safety,
+    sources,
+    loading,
+    stateChangeBanner,
+    whyChangedData,
+    journeyEvents,
+    activeTab,
+    setActiveTab,
+    isWhyModalOpen,
+    setIsWhyModalOpen,
+    isStressModalOpen,
+    setIsStressModalOpen,
+    handleSendMessage,
+    resetSession,
+  } = useCareRoute();
 
   return (
-    <main className="app">
-      <header>
-        <h1>CareRoute</h1>
-        <p>AI Patient Navigation — stateful, grounded, evaluated.</p>
-      </header>
+    <div className="app-container">
+      {/* Top Header */}
+      <Header
+        onOpenStressTest={() => setIsStressModalOpen(true)}
+        onResetSession={resetSession}
+      />
 
-      <section className="grid">
-        <Chat messages={messages} onSend={handleSend} loading={loading} />
-        <PatientState state={data?.patient_state} changes={data?.state_changes} />
-        <NavigationResult navigation={data?.navigation} safety={data?.safety} sources={data?.sources} />
-        <PrismPanel />
-      </section>
-    </main>
+      {/* Main 3-Column Layout */}
+      <main className="main-layout">
+        {/* Left Column: Navigation Sidebar */}
+        <Sidebar activeTab={activeTab} onTabSelect={setActiveTab} />
+
+        {/* Center / Right Columns: Render based on Active Tab */}
+        {activeTab === "chat" && (
+          <>
+            {/* Center Column: Live Patient Conversation */}
+            <ChatView
+              messages={messages}
+              onSendMessage={handleSendMessage}
+              loading={loading}
+              stateChangeBanner={stateChangeBanner}
+              onOpenWhyModal={() => setIsWhyModalOpen(true)}
+            />
+
+            {/* Right Column: Patient State & Navigation */}
+            <PatientStateView
+              patientState={patientState}
+              newInformation={newInformation}
+              riskLevel={riskLevel}
+              navigation={navigation}
+              safety={safety}
+              sources={sources}
+              onOpenWhyModal={() => setIsWhyModalOpen(true)}
+              onNavigateToCareRoute={() => setActiveTab("careroute")}
+            />
+          </>
+        )}
+
+        {activeTab === "state" && (
+          <FullPatientStateView
+            patientState={patientState}
+            riskLevel={riskLevel}
+            navigation={navigation}
+            journeyEvents={journeyEvents}
+            sources={sources}
+          />
+        )}
+
+        {activeTab === "journey" && (
+          <div className="prism-view-container">
+            <div className="panel-card" style={{ padding: "28px" }}>
+              <div className="panel-header">
+                <div className="panel-title">
+                  <span>🧭</span> PATIENT JOURNEY & EVENT LOGS
+                </div>
+                <div className="panel-subtitle">Chronological progression of extracted clinical context</div>
+              </div>
+              <JourneyTimeline
+                patientState={patientState}
+                riskLevel={riskLevel}
+                navigation={navigation}
+                journeyEvents={journeyEvents}
+              />
+            </div>
+          </div>
+        )}
+
+        {activeTab === "careroute" && (
+          <CareRouteView
+            patientState={patientState}
+            riskLevel={riskLevel}
+            navigation={navigation}
+            onOpenWhyModal={() => setIsWhyModalOpen(true)}
+          />
+        )}
+
+        {activeTab === "prism" && <PrismView />}
+
+        {/* Bottom Full-Width Journey Timeline on Chat View */}
+        {activeTab === "chat" && (
+          <JourneyTimeline
+            patientState={patientState}
+            riskLevel={riskLevel}
+            navigation={navigation}
+            journeyEvents={journeyEvents}
+          />
+        )}
+      </main>
+
+      {/* Why Did This Change Modal */}
+      <WhyChangedModal
+        isOpen={isWhyModalOpen}
+        onClose={() => setIsWhyModalOpen(false)}
+        whyData={whyChangedData}
+      />
+
+      {/* Stress Test Modal */}
+      <StressTestModal
+        isOpen={isStressModalOpen}
+        onClose={() => setIsStressModalOpen(false)}
+        onExecuteTurn={handleSendMessage}
+        onResetSession={resetSession}
+      />
+    </div>
   );
 }
