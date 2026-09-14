@@ -1,0 +1,58 @@
+[
+  {
+    "trace_id": "trace-6f1f323b",
+    "turn_index": 0,
+    "scenario_id": "missing-info-01",
+    "input_message": "I'm having chest discomfort.",
+    "state_after": {
+      "session_id": "eval-v2-missing-info-01",
+      "symptoms": [
+        "chest discomfort / pain"
+      ],
+      "conditions": [],
+      "medications": [],
+      "critical_flags": [
+        "chest discomfort / pain"
+      ],
+      "missing_information": [
+        "Pain radiation (does the discomfort radiate to arm, neck, jaw, or back?)",
+        "Associated autonomic symptoms (shortness of breath, sweating, nausea)",
+        "Onset and context (sudden or gradual; at rest or during exertion)"
+      ],
+      "confidence": {
+        "chest discomfort / pain": 0.95
+      },
+      "last_updated": "2026-09-14T19:13:52.526542+00:00"
+    },
+    "state_changes": [
+      "Added symptom: chest discomfort / pain",
+      "Critical flag detected: chest discomfort / pain"
+    ],
+    "missing_information": [
+      "Pain radiation (does the discomfort radiate to arm, neck, jaw, or back?)",
+      "Associated autonomic symptoms (shortness of breath, sweating, nausea)",
+      "Onset and context (sudden or gradual; at rest or during exertion)"
+    ],
+    "navigation": {
+      "urgency": "emergency",
+      "next_step": "Seek emergency medical care immediately. Call 911 or go to the nearest emergency room.",
+      "reasoning_summary": "Chest discomfort or pain is a red-flag symptom that warrants urgent ruling out of acute coronary syndromes or life-threatening cardiopulmonary events.",
+      "safety_flags": [
+        "CRITICAL_RED_FLAG: Chest discomfort detected",
+        "NON_DIAGNOSTIC: Care setting navigation only"
+      ]
+    },
+    "verification": {
+      "passed": true,
+      "safety_flags": [
+        "CRITICAL_RED_FLAG: Chest discomfort detected",
+        "NON_DIAGNOSTIC: Care setting navigation only"
+      ],
+      "grounding_flags": [
+        "P2_MOCK: Grounding verification pending Person 2 implementation"
+      ],
+      "revised_response": null
+    },
+    "response": "Based on your report of chest discomfort / pain, this requires urgent in-person medical evaluation. Seek emergency medical care immediately. Call 911 or go to the nearest emergency room."
+  }
+]

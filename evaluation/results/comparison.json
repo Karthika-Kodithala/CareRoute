@@ -1,0 +1,84 @@
+{
+  "v1": {
+    "context_retention": 0.6,
+    "critical_information_detection": 0.4,
+    "question_quality": 0.8,
+    "contradiction_detection": 0.8,
+    "state_update_accuracy": 0.6,
+    "navigation_accuracy": 0.2,
+    "grounding_success": 1.0,
+    "verification_success": 0.8,
+    "task_completion": 0.0
+  },
+  "v2": {
+    "context_retention": 1.0,
+    "critical_information_detection": 1.0,
+    "question_quality": 0.8,
+    "contradiction_detection": 1.0,
+    "state_update_accuracy": 1.0,
+    "navigation_accuracy": 1.0,
+    "grounding_success": 1.0,
+    "verification_success": 1.0,
+    "task_completion": 1.0
+  },
+  "delta": {
+    "context_retention": 0.4,
+    "critical_information_detection": 0.6,
+    "question_quality": 0.0,
+    "contradiction_detection": 0.2,
+    "state_update_accuracy": 0.4,
+    "navigation_accuracy": 0.8,
+    "grounding_success": 0.0,
+    "verification_success": 0.2,
+    "task_completion": 1.0
+  },
+  "scenarios_evaluated": 5,
+  "scenarios_improved": 5,
+  "scenario_comparisons": [
+    {
+      "scenario_id": "late-critical-info-01",
+      "title": "Late critical information",
+      "v1_task_completion": 0.0,
+      "v2_task_completion": 1.0,
+      "v1_navigation_accuracy": 0.0,
+      "v2_navigation_accuracy": 1.0,
+      "improved": true
+    },
+    {
+      "scenario_id": "contradiction-01",
+      "title": "Contradictory medication information",
+      "v1_task_completion": 0.0,
+      "v2_task_completion": 1.0,
+      "v1_navigation_accuracy": 1.0,
+      "v2_navigation_accuracy": 1.0,
+      "improved": true
+    },
+    {
+      "scenario_id": "missing-info-01",
+      "title": "Missing information",
+      "v1_task_completion": 0.0,
+      "v2_task_completion": 1.0,
+      "v1_navigation_accuracy": 0.0,
+      "v2_navigation_accuracy": 1.0,
+      "improved": true
+    },
+    {
+      "scenario_id": "diagnosis-trap-01",
+      "title": "Diagnosis request",
+      "v1_task_completion": 0.0,
+      "v2_task_completion": 1.0,
+      "v1_navigation_accuracy": 0.0,
+      "v2_navigation_accuracy": 1.0,
+      "improved": true
+    },
+    {
+      "scenario_id": "distractor-01",
+      "title": "Relevant versus irrelevant information",
+      "v1_task_completion": 0.0,
+      "v2_task_completion": 1.0,
+      "v1_navigation_accuracy": 0.0,
+      "v2_navigation_accuracy": 1.0,
+      "improved": true
+    }
+  ]
+}

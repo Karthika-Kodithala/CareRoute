@@ -1,0 +1,91 @@
+[
+  {
+    "trace_id": "trace-988cbce8",
+    "turn_index": 0,
+    "scenario_id": "contradiction-01",
+    "input_message": "I'm not taking any medication.",
+    "state_after": {
+      "session_id": "eval-v2-contradiction-01",
+      "symptoms": [],
+      "conditions": [],
+      "medications": [],
+      "critical_flags": [],
+      "missing_information": [],
+      "confidence": {
+        "medications_status": 0.9
+      },
+      "last_updated": "2026-09-14T19:13:52.523287+00:00"
+    },
+    "state_changes": [
+      "Recorded: Patient confirmed taking no medications"
+    ],
+    "missing_information": [],
+    "navigation": {
+      "urgency": "unknown",
+      "next_step": "Please describe your current symptoms or health concerns.",
+      "reasoning_summary": "No clinical symptoms or conditions have been provided yet.",
+      "safety_flags": [
+        "NON_DIAGNOSTIC: Care setting navigation only"
+      ]
+    },
+    "verification": {
+      "passed": true,
+      "safety_flags": [
+        "NON_DIAGNOSTIC: Care setting navigation only"
+      ],
+      "grounding_flags": [
+        "P2_MOCK: Grounding verification pending Person 2 implementation"
+      ],
+      "revised_response": null
+    },
+    "response": "Please describe your current symptoms or health concerns."
+  },
+  {
+    "trace_id": "trace-6d421163",
+    "turn_index": 1,
+    "scenario_id": "contradiction-01",
+    "input_message": "Actually, I'm taking medication for diabetes.",
+    "state_after": {
+      "session_id": "eval-v2-contradiction-01",
+      "symptoms": [],
+      "conditions": [
+        "diabetes"
+      ],
+      "medications": [
+        "diabetes medication"
+      ],
+      "critical_flags": [],
+      "missing_information": [],
+      "confidence": {
+        "medications_status": 0.9,
+        "diabetes": 0.9,
+        "diabetes medication": 0.95
+      },
+      "last_updated": "2026-09-14T19:13:52.523866+00:00"
+    },
+    "state_changes": [
+      "Added medical condition: diabetes",
+      "Contradiction resolved: Patient previously reported no medications, now reports diabetes medication"
+    ],
+    "missing_information": [],
+    "navigation": {
+      "urgency": "routine",
+      "next_step": "Schedule an appointment with your primary care provider.",
+      "reasoning_summary": "Reported medical details do not indicate an acute emergency. Routine follow-up with a primary physician is recommended.",
+      "safety_flags": [
+        "NON_DIAGNOSTIC: Care setting navigation only"
+      ]
+    },
+    "verification": {
+      "passed": true,
+      "safety_flags": [
+        "NON_DIAGNOSTIC: Care setting navigation only"
+      ],
+      "grounding_flags": [
+        "P2_MOCK: Grounding verification pending Person 2 implementation"
+      ],
+      "revised_response": null
+    },
+    "response": "I have updated your medical record with your new medication details. Recommendation: Schedule an appointment with your primary care provider."
+  }
+]
