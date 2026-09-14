@@ -1,0 +1,14 @@
+{
+  "trace_id": "string",
+  "scenario_id": "string",
+  "input_message": "string",
+  "state_before": {},
+  "state_after": {},
+  "extracted_facts": [],
+  "state_changes": [],
+  "missing_information": [],
+  "navigation": {},
+  "grounding": {},
+  "verification": {},
+  "final_outcome": {}
+}

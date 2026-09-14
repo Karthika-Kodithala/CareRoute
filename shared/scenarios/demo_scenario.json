@@ -1,0 +1,9 @@
+{
+  "scenario_id": "demo-late-critical-info",
+  "turns": [
+    "I'm feeling dizzy.",
+    "It started this morning.",
+    "I actually fainted earlier."
+  ],
+  "demo_goal": "Show that a late critical fact changes patient state and triggers navigation reassessment."
+}

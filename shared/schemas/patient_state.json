@@ -1,0 +1,10 @@
+{
+  "session_id": "string",
+  "symptoms": [],
+  "conditions": [],
+  "medications": [],
+  "critical_flags": [],
+  "missing_information": [],
+  "confidence": {},
+  "last_updated": "ISO-8601"
+}

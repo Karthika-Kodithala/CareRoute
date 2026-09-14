@@ -1,0 +1,6 @@
+{
+  "urgency": "routine|soon|urgent|emergency|unknown",
+  "next_step": "string",
+  "reasoning_summary": "string",
+  "safety_flags": []
+}
