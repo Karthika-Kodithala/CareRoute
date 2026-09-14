@@ -1,0 +1,160 @@
+[
+  {
+    "id": "GUIDE-SYNCOPE-01",
+    "title": "Clinical Triage Protocol: Dizziness, Lightheadedness, and Syncope",
+    "section": "Emergency Red Flags & Triage Escalation",
+    "url_or_id": "guidelines://triage/syncope-dizziness-v1",
+    "snippet": "Dizziness accompanied by fainting (syncope) or transient loss of consciousness is a red flag requiring immediate emergency or urgent clinical assessment to rule out cardiac arrhythmias, neurological events, or severe hemodynamic instability.",
+    "content": "Patients presenting with dizziness, lightheadedness, or vertigo must be screened for syncope (fainting) or loss of consciousness. Any report of actual fainting or passing out is an immediate escalation event requiring emergency medical services (EMS / 911) or prompt emergency department evaluation. Isolated dizziness without syncope or neurological deficits warrants urgent care or primary care evaluation with vital signs and hydration assessment. CareRoute must strictly avoid providing diagnoses (e.g. vasovagal vs cardiac syncope) and must never advise delaying care when syncope is reported.",
+    "keywords": [
+      "dizzy",
+      "dizziness",
+      "lightheaded",
+      "lightheadedness",
+      "faint",
+      "fainted",
+      "fainting",
+      "syncope",
+      "passed out",
+      "blackout",
+      "vertigo",
+      "loss of consciousness"
+    ],
+    "urgency": "emergency",
+    "red_flags": ["fainted", "fainting", "syncope", "passed out", "loss of consciousness"]
+  },
+  {
+    "id": "GUIDE-CHEST-01",
+    "title": "Emergency Navigation: Acute Chest Discomfort and Cardiac Symptoms",
+    "section": "Red Flag Identification & Immediate Escalation",
+    "url_or_id": "guidelines://triage/chest-discomfort-v1",
+    "snippet": "Any unexplained chest discomfort, pressure, or tightness is a critical red flag requiring urgent emergency medical evaluation. CareRoute must not diagnose or rule out myocardial infarction, but must guide the patient to immediate emergency services.",
+    "content": "Unexplained chest discomfort, pressure, heaviness, tightness, or pain in the chest area must be treated as a high-urgency clinical situation. Immediate emergency medical evaluation (calling 911 or visiting the nearest Emergency Department) is required. Essential missing information that should be clarified while advising urgent care includes radiation to the left arm, neck, jaw, or back, associated shortness of breath, diaphoresis (sweating), and nausea. CareRoute must NEVER diagnose conditions like angina, heart attack, or GERD, nor give false reassurance that chest symptoms are benign.",
+    "keywords": [
+      "chest discomfort",
+      "chest pain",
+      "chest pressure",
+      "tightness",
+      "heart problem",
+      "cardiac",
+      "angina",
+      "myocardial",
+      "radiation",
+      "left arm",
+      "sweating",
+      "diaphoresis",
+      "shortness of breath"
+    ],
+    "urgency": "emergency",
+    "red_flags": ["chest discomfort", "chest pain", "chest pressure", "radiating pain"]
+  },
+  {
+    "id": "GUIDE-DIABETES-01",
+    "title": "Clinical Navigation: Diabetes, Glycemic Symptoms, and Medication Safety",
+    "section": "Hypoglycemia Risk, Medication Reconciliation & Safe Care Routing",
+    "url_or_id": "guidelines://triage/diabetes-medication-v1",
+    "snippet": "Patients with diabetes taking hypoglycemic medications or insulin who experience dizziness or weakness are at acute risk for hypoglycemia. CareRoute must never adjust, prescribe, or discontinue medication dosages.",
+    "content": "When a patient reports a diagnosis of diabetes or use of diabetic medications (such as insulin, metformin, sulfonylureas), non-specific symptoms such as dizziness, shakiness, confusion, or weakness indicate possible hypoglycemia or glycemic fluctuation. If medication history changes or contradicts prior statements (e.g. initially denying medications then disclosing diabetes treatments), the patient state must be reconciled immediately. CareRoute is strictly prohibited from advising changes to medication dosages, prescribing drugs, or telling patients to stop their medications. The patient should be guided to check their blood glucose if safely equipped and seek urgent or primary medical evaluation.",
+    "keywords": [
+      "diabetes",
+      "diabetic",
+      "insulin",
+      "metformin",
+      "blood sugar",
+      "glucose",
+      "hypoglycemia",
+      "hyperglycemia",
+      "medication",
+      "shakiness",
+      "tremor"
+    ],
+    "urgency": "urgent-care",
+    "red_flags": ["hypoglycemia", "severe shakiness", "confusion with diabetes"]
+  },
+  {
+    "id": "GUIDE-SAFETY-01",
+    "title": "CareRoute AI Safety Protocol: Clinical Boundaries & Non-Diagnostic Scope",
+    "section": "Communication Constraints & Safe Navigation Standards",
+    "url_or_id": "guidelines://safety/clinical-boundaries-v1",
+    "snippet": "CareRoute is a clinical navigation and triage assistant. Responses must never issue definitive medical diagnoses, offer false certainty or reassurance, or provide ungrounded prescription instructions.",
+    "content": "All CareRoute communications must adhere to strict clinical navigation boundaries: (1) Non-diagnostic: Avoid definitive statements such as 'You have condition X' or 'This is definitely Y'. Use navigational terms like 'These symptoms indicate a need for clinical evaluation by a physician'. (2) Uncertainty management: Avoid dangerous absolute reassurances such as 'You are 100% fine' or 'There is nothing wrong'. Always acknowledge clinical uncertainty. (3) No medication prescribing: Never suggest specific medication dosages, changes to prescription regimens, or discontinuation of prescribed drugs. (4) Escalation fidelity: If red-flag symptoms are present, always prioritize timely clinical evaluation over delay.",
+    "keywords": [
+      "safety",
+      "boundaries",
+      "diagnosis",
+      "prescribe",
+      "medication",
+      "certainty",
+      "disclaimer",
+      "triage",
+      "escalation",
+      "protocol"
+    ],
+    "urgency": "advisory",
+    "red_flags": []
+  },
+  {
+    "id": "GUIDE-RESP-01",
+    "title": "Emergency Navigation: Acute Respiratory Symptoms and Dyspnea",
+    "section": "Shortness of Breath & Airway Emergency Navigation",
+    "url_or_id": "guidelines://triage/respiratory-distress-v1",
+    "snippet": "Acute shortness of breath, severe dyspnea, or stridor represents an emergency requiring immediate clinical attention and emergency services dispatch.",
+    "content": "Difficulty breathing, acute shortness of breath, wheezing with respiratory distress, or blue lips/fingertips (cyanosis) are red-flag indicators requiring immediate emergency medical services (911/EMS). Inquiries should check for rapid onset, chest tightness, fever, or history of asthma/COPD while directing the patient to emergency care. Do not delay emergency referral.",
+    "keywords": [
+      "shortness of breath",
+      "difficulty breathing",
+      "breathless",
+      "dyspnea",
+      "wheezing",
+      "stridor",
+      "gasping",
+      "respiratory"
+    ],
+    "urgency": "emergency",
+    "red_flags": ["shortness of breath", "difficulty breathing", "stridor", "cyanosis"]
+  },
+  {
+    "id": "GUIDE-NEURO-01",
+    "title": "Clinical Navigation: Neurological Red Flags and Sudden Headache",
+    "section": "Thunderclap Headache, Stroke Screening & Focal Deficits",
+    "url_or_id": "guidelines://triage/neurological-redflags-v1",
+    "snippet": "Sudden severe 'worst headache of life' (thunderclap), facial drooping, unilateral weakness, or speech difficulty requires immediate emergency medical evaluation for suspected stroke or intracranial event.",
+    "content": "Patients presenting with sudden severe onset headache (reaching maximal intensity within seconds or minutes), new focal weakness, numbness on one side of the body, facial droop, slurred speech, or acute confusion require urgent emergency department evaluation (FAST stroke protocol). CareRoute must guide patients to emergency medical assistance without delay.",
+    "keywords": [
+      "headache",
+      "thunderclap",
+      "worst headache",
+      "facial droop",
+      "weakness",
+      "numbness",
+      "slurred speech",
+      "stroke",
+      "neurological",
+      "confusion"
+    ],
+    "urgency": "emergency",
+    "red_flags": ["thunderclap", "facial droop", "slurred speech", "unilateral weakness"]
+  },
+  {
+    "id": "GUIDE-GENERAL-TRIAGE-01",
+    "title": "General Clinical Navigation & Symptom Assessment Protocol",
+    "section": "Context Retention, Missing Information & Routine Primary Care",
+    "url_or_id": "guidelines://triage/general-navigation-v1",
+    "snippet": "For mild, non-emergency symptoms, CareRoute retains patient context, identifies key missing clinical details (onset, duration, severity), and navigates to appropriate primary care or outpatient resources.",
+    "content": "When evaluating non-urgent, mild symptoms (e.g. mild fatigue, non-severe aches, routine health inquiries), CareRoute systematically collects essential context: symptom onset, duration, severity (1-10 scale), aggravating or relieving factors, and current medical history. If critical details are missing, the agent asks targeted clarifying questions before formulating a definitive navigation path. Safe advice emphasizes primary care scheduling, monitoring symptom progression, and seeking urgent care if red-flag symptoms emerge.",
+    "keywords": [
+      "general",
+      "mild symptoms",
+      "routine",
+      "onset",
+      "duration",
+      "severity",
+      "primary care",
+      "monitoring",
+      "outpatient",
+      "context"
+    ],
+    "urgency": "routine",
+    "red_flags": []
+  }
+]
